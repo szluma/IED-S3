@@ -40,6 +40,15 @@ public class PrimeiroVetor {
         tamanho--;
     }
 
+    //remover por índice nulo
+    public void removerPorIndiceNulo(int indice){
+        if(indice < 0 || indice >= tamanho){
+            System.out.println("Índice inválido!");
+            return;
+        }
+        elementos[indice] = 0;
+    }
+
     //Pegar elementos
 
     public int  getElemento(int indice){

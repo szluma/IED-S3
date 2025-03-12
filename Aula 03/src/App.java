@@ -14,7 +14,7 @@ public class App {
       System.out.println("Indice 2 = " + vetor.getElemento(2));
       System.out.println("quantidade = " + vetor.getTamanho());
       System.out.println("-----------------------------------");
-      vetor.removerPorIndice(2);
+      vetor.removerPorIndiceNulo(2);
       vetor.exibir();System.out.println("tamanho do vetor = "+ vetor.getTamanho());
       vetor.exibir();
     }

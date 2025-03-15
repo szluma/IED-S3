@@ -1,5 +1,3 @@
-package Vetor;
-
 public class Vetor {
     private int[] elementosi;
     private String [] elementosstr;
@@ -38,30 +36,139 @@ public class Vetor {
         }else{
             System.out.println("Vetor está cheio");
         }
-
-    public void adicionarTodos_i(int... elementosi){
-        for (int elementoi : elementosi) {
-            adicionar(elementoi);
-            } 
-        }
-
-    public void adicionarTodos__str(String... elementosstr){
-        for (int elementostr : elementosstr) {
-            adicionar(elementostr);
-            } 
-        }
-
-    public void adicionarTodos_f(float... elementosf){
-        for (int elementof : elementosf) {
-            adicionar(elementof);
-            } 
-        }
     }
 
+    public void removerPorIndiceInt(int indice){
+        if(indice < 0 || indice >= tamanho){
+            System.out.println("Índice inválido!");
+            return;
+        }
+    
+        for(int i = indice; i < tamanho - 1; i++){
+            elementosi[i] = elementosi[i+1];
+        }
+        tamanho--;
+        }
+
+    public void removerPorIndiceStr(int indice){
+        if(indice < 0 || indice >= tamanho){
+            System.out.println("Índice inválido!");
+            return;
+        }
+    
+        for(int i = indice; i < tamanho - 1; i++){
+                elementosstr[i] = elementosstr[i+1];
+        }
+        tamanho--;
+        }
+
+    public void removerPorIndiceFloat(int indice){
+        if(indice < 0 || indice >= tamanho){
+            System.out.println("Índice inválido!");
+            return;
+        }
+    
+        for(int i = indice; i < tamanho - 1; i++){
+            elementosf[i] = elementosf[i+1];
+        }
+            tamanho--;
+        }
+    
+    public void removerPorIndiceNuloInt(int indice){
+        if(indice >=0 && indice < tamanho){
+            System.out.println("Este índice está inválido!");
+            return;
+        }
+        elementosi[indice] =  (Integer) null;
+    }
+
+    public void removerPorIndiceNuloF(int indice){
+        if(indice >=0 && indice < tamanho){
+            System.out.println("Este índice está inválido!");
+            return;
+        }
+        elementosf[indice] = (Float) null;
+    }
+
+    public void removerPorIndiceNuloStr(int indice){
+        if(indice >=0 && indice < tamanho){
+            System.out.println("Este índice está inválido!");
+            return;
+        }
+        elementosstr[indice] = null;
+    }
+
+    public void exibirInt(){
+
+        System.out.println("Vetor ");
+        for (int i = 0; i < tamanho; i++) {
+            System.out.println(elementosi[i] + " ");
+            
+            }
+    
+        }
+
+    public void exibirStr(){
+
+    System.out.println("Vetor ");
+    for (int i = 0; i < tamanho; i++) {
+        System.out.println(elementosstr[i] + " ");
+            
+            }
+    
+        }
+    
+    public void exibirF(){
+
+        System.out.println("Vetor ");
+        for (int i = 0; i < tamanho; i++) {
+            System.out.println(elementosf[i] + " ");
+                    
+            }
+            
+        }
+
+    public int  getElementoInt(int indice){
+        if (indice >=0 && indice < tamanho){
+            return elementosi[indice];
+        }
+        throw new IndexOutOfBoundsException("índice inválido" + indice);
+    }
+    
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    public float getElementofloat(int indice){
+        if (indice >=0 && indice < tamanho){
+            return elementosf[indice];
+        }
+        throw new IndexOutOfBoundsException("índice inválido" + indice);
+    }
+
+    public String getElemento(int indice){
+        if (indice >=0 && indice < tamanho){
+            return elementosstr[indice];
+        }
+        throw new IndexOutOfBoundsException("índice inválido" + indice);
+    }
+    
     public static void main(String[] args) {
+        Vetor Tatu = new Vetor(3);
+        Tatu.adicionarf(2.1f);
+        Tatu.exibirF();System.out.println("Tamanho deste vetor é float = " + Tatu.getTamanho()); 
+
+        Vetor Lobo = new Vetor(3);
+        Lobo.adicionari(6);
+        Lobo.exibirInt();Lobo.exibirF();System.out.println("Tamanho deste vetor é inteiro = " + Lobo.getTamanho());
+
+
+        Vetor Cachorro = new Vetor(3);
+        Cachorro.adicionars("jaguatirica");
+        Cachorro.exibirStr();Cachorro.exibirF();System.out.println("Tamanho deste vetor é String = " + Cachorro.getTamanho());
+
         
     }
-    
-    }
-    
+}
 
+    

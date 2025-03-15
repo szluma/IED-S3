@@ -38,7 +38,25 @@ public class Vetor {
         }else{
             System.out.println("Vetor está cheio");
         }
+
+    public void adicionarTodos_i(int... elementosi){
+        for (int elementoi : elementosi) {
+            adicionar(elementoi);
+            } 
         }
+
+    public void adicionarTodos__str(String... elementosstr){
+        for (int elementostr : elementosstr) {
+            adicionar(elementostr);
+            } 
+        }
+
+    public void adicionarTodos_f(float... elementosf){
+        for (int elementof : elementosf) {
+            adicionar(elementof);
+            } 
+        }
+    }
 
     public static void main(String[] args) {
         
@@ -46,5 +64,4 @@ public class Vetor {
     
     }
     
-
 

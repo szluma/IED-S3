@@ -20,7 +20,7 @@ public class Vetor {
         }else{
             System.out.println("Vetor está cheio");
         }
-        }
+    }
 
     public void adicionars(String elementostr){
          if (tamanho < elementosstr.length){
@@ -29,7 +29,7 @@ public class Vetor {
         }else{
             System.out.println("Vetor está cheio");
             }
-            }
+    }
 
     public void adicionarf(float elementof){
         if (tamanho < elementosf.length){
